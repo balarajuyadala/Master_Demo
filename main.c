@@ -1,5 +1,8 @@
-/* Author : BALARAJU
-Created   : 25-04-2024*/
+/* Author   : BALARAJU
+Description : Node 
+Created     : 25-04-2024
+Return      :
+*/
 
 
 #include<iostream>
