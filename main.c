@@ -190,3 +190,64 @@ int main()
     
     return 0;
 }
+
+
+//deep copy
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class test
+{
+    private:
+    int i;
+    char* name;
+    public:
+    test(const char* str)
+    {
+        i = strlen(str);
+        name = new char[i+1];
+        strcpy(name,str);
+    }
+   //copy constructor
+    test(const test& data)
+    {
+        //shallow copy
+        name = data.name;
+        
+        /*
+        //Deep copy
+        i = strlen(data.name);
+        name = new char[i+1];
+        strcpy(name,data.name);*/
+    }
+    
+    void setVal(const char* strr)
+    {
+        delete[] name;
+        i = strlen(strr);
+        name = new char[i+1];
+        strcpy(name,strr);
+    }
+    void display()
+    {
+        cout<<name<<endl;
+    }
+    
+};
+
+int main()
+{
+    test t("bitra");
+    test t1 = t;
+    
+    t.display();
+    t1.display();
+    
+    t.setVal("Bala");
+    
+    t.display();
+    t1.display();
+    return 0;
+}
